@@ -4,17 +4,14 @@ import LineGraph from "./LineGraph";
 
 import Spinner from "./Spinner";
 
-// fetch("https://api.openweathermap.org/data/2.5/forecast?id=524901&cnt=5&APPID=38a9649538adbdd22fa0080fa86876f9").then(res => res.json()).then(data => console.log(data))
-
-// https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=12.9716&lon=-77.5946&dt=${date}&appid=38a9649538adbdd22fa0080fa86876f9
-
 function Weather({ city, lat, lng }) {
-  const [current, setCurrent] = useState({});
-  const [currentWeather, setCurrentWeather] = useState([]);
-  const [hourly, setHourly] = useState([]);
-  const [daily, setDaily] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [current, setCurrent] = useState({}); //current weather stats
+  const [currentWeather, setCurrentWeather] = useState([]); //current weather condition like description
+  const [hourly, setHourly] = useState([]); // hourly city weatehr stats
+  const [daily, setDaily] = useState([]); // daily city weather stats
+  const [isLoading, setIsLoading] = useState(false); //loading indicatior state
 
+  //function to fetch weathe data from open weather api
   const fetchData = () => {
     setIsLoading(true);
     fetch(
@@ -30,6 +27,7 @@ function Weather({ city, lat, lng }) {
       });
   };
 
+  // using lifecycle method in functional component
   useEffect(() => {
     fetchData();
   }, []);
@@ -59,8 +57,10 @@ function Weather({ city, lat, lng }) {
               <h4>Time: {new Date(current.dt).toLocaleTimeString()}</h4>
             </div>
           </section>
-          <LineGraph name={city} hourly={hourly} />
-          <BarGraph name={city} daily={daily} />
+          <LineGraph name={city} hourly={hourly} />{" "}
+          {/* component for  hourly data displayed in line chart with city name */}
+          <BarGraph name={city} daily={daily} />{" "}
+          {/* component for displaying daily data in barchat chart city name */}
         </section>
       )}
     </div>

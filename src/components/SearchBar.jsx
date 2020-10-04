@@ -1,20 +1,18 @@
 import React, { Fragment, useState } from "react";
 
-// import BarGraph from "./BarGraph";
-
-// import LineGraph from "./LineGraph";
 import Weather from "./Weather";
 
 export default function SearchBar() {
-  const [city, setCity] = useState("");
-  const [cityName, setCityName] = useState("");
-  const [lat, setLat] = useState(12.9716);
-  const [lng, setLng] = useState(-77.5946);
+  const [city, setCity] = useState(""); // storing city name to fetch  user choosen city weather
+  const [cityName, setCityName] = useState(""); // getting city name after form submitting
+  const [lat, setLat] = useState(12.9716); // default lat for banglore location
+  const [lng, setLng] = useState(-77.5946); // default lng for banglore location
   const handleChange = (e) => {
     setCity(e.target.value);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    // convert user entered city into latitude and longitutde
     fetch(
       `https://api.opencagedata.com/geocode/v1/json?q=${city}&key=${process.env.REACT_APP_GEO_API_KEY}`
     )
@@ -47,6 +45,7 @@ export default function SearchBar() {
           </button>
         </form>
       </div>
+      {/* to dispaly weather data of user city  */}
       <Weather lat={lat} lng={lng} city={cityName} />
     </Fragment>
   );
