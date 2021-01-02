@@ -1,3 +1,5 @@
+<img alt="GitHub" src="https://img.shields.io/github/license/sbabureddy/botsync-assignment">
+
 # Botysync Weather App
 
 ## Instruction to run the project
