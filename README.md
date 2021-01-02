@@ -1,4 +1,5 @@
-<img alt="GitHub" src="https://img.shields.io/github/license/sbabureddy/botsync-assignment">
+<img alt="GitHub" src="https://img.shields.io/github/license/sbabureddy/botsync-assignment">  ![npm](https://img.shields.io/npm/v/npm)
+
 
 # Botysync Weather App
 
