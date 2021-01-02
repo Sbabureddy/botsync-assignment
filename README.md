@@ -1,5 +1,4 @@
-<img alt="GitHub" src="https://img.shields.io/github/license/sbabureddy/botsync-assignment">  ![npm](https://img.shields.io/npm/v/npm)
-
+<img alt="GitHub" src="https://img.shields.io/github/license/sbabureddy/botsync-assignment">  ![npm](https://img.shields.io/npm/v/npm)  ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/sbabureddy/botsync-assignment/react) ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/sbabureddy/botsync-assignment/reactstrap) ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/sbabureddy/botsync-assignment/react-router-dom)
 
 # Botysync Weather App
 
